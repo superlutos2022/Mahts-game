@@ -1,441 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        button{
-            border-radius: 9px;
-            color: aqua;
-            background-color: darkblue;
-
-
-        }
-        input{
-            border-radius: 7px;
-            color: aqua;
-            background-color: darkblue;
-        }
-        p{
-            color: white;
-            font-size: 30px;
-        }
-        h6{
-            color: white;
-            font-size: 15px;
-        }
-        body{
-            background-color: black;
-            text-align: center;
-        }
-    </style>
+  <style>
+    #number-display {
+      font-size: 36px;
+    }
+    div{
+      font-size: 100px;
+      text-align: center;
+    }
+    button{
+      font-size: 20px;
+      text-align: center;
+    }
+    input{
+      font-size: 20px;
+      text-align: center;
+    }
+    p{
+      font-size: 35px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <p>select a language</p>
-    <br>
-    <h6>↓ english or germany ↓</h6>
-    <input type="" placeholder="" id="select" value="">
-    <br>
-    <p>enter your qusetion</p>
-    <br>
-    <h6>↓ Here your question ↓</h6>
-    <input type="" placeholder="" id="name" value="">
-    <br>
-<br>
-    <button onclick="selectet_lauguage()">click me if you enter your qusetion and the language</button>
+  <div id="number-display"></div>
+  <p id="numbers"></p>
+  <p>Score: <span id="score">0</span></p>
+  <br><br><br>
+  <input type="text" id="number-input" />
+  <button onclick="checkSum()">Submit</button>
+  <p>if you get it wrong or right the numbers will be in 5sec back</p>
+  <audio src="audio/0.ogg" id="audio0" type="audio/ogg"></audio>
+  <audio src="audio/1.ogg" id="audio1" type="audio/ogg"></audio>
+  <audio src="audio/2.ogg" id="audio2" type="audio/ogg"></audio>
+  <audio src="audio/3.ogg" id="audio3" type="audio/ogg"></audio>
+  <audio src="audio/4.ogg" id="audio4" type="audio/ogg"></audio>
+  <audio src="audio/5.ogg" id="audio5" type="audio/ogg"></audio>
+  <audio src="audio/6.ogg" id="audio6" type="audio/ogg"></audio>
+  <audio src="audio/7.ogg" id="audio7" type="audio/ogg"></audio>
+  <audio src="audio/8.ogg" id="audio8" type="audio/ogg"></audio>
+  <audio src="audio/9.ogg" id="audio9" type="audio/ogg"></audio>
+  <audio src="audio/10.ogg" id="audio10" type="audio/ogg"></audio>
+  <script>
+    const NUMBERS_TO_DISPLAY = 11;
+    let currentNumberIndex = 0;
+    let numbers = [];
 
-   <p id="select"></p>
-    <p id="Hello"></p>
-    <img src="Download (1).jpg" width="40%" height="300px">
-</body>
-<script>
-    function selectet_lauguage(){
-        if(document.getElementById('select').value =="english"){
+    function showNextNumber() {
+      if (currentNumberIndex >= NUMBERS_TO_DISPLAY) {
+        return;
+      }
 
-        if(document.getElementById('name').value =="How are You" ||
-        (document.getElementById('name').value =="How are you") ||
-        (document.getElementById('name').value =="how are you") ||
-        (document.getElementById('name').value =="How are You")) 
-        {
-            document.getElementById('Hello').innerHTML = "Fine thank you" 
-        }
-        else if(document.getElementById('name').value =="wahts your name"||
-        (document.getElementById('name').value =="Wahts your name") ||
-        (document.getElementById('name').value =="Wahts Your Name") ||
-        (document.getElementById('name').value =="Wahts your Name") )
-        {
-            document.getElementById('Hello').innerHTML = "my name is wasel" 
-        } 
-        else if(document.getElementById('name').value =="Wahts your Hobby"||
-        (document.getElementById('name').value =="wahts your hobby")||
-        (document.getElementById('name').value =="Wahts Your Hobby")||
-        (document.getElementById('name').value =="WAHTS YOUR HOBBY"))
-        {
-            document.getElementById('Hello').innerHTML = "my Hobby is swimming" 
-        } 
-        else if(document.getElementById('name').value =="do you have siblings"||
-        (document.getElementById('name').value =="Do yo have siblings")||
-        (document.getElementById('name').value =="Do you have siblings")||
-        (document.getElementById('name').value =="Do you have Siblings"))
-        {
-            document.getElementById('Hello').innerHTML = "yes i have two siblings" 
-        } 
-        else if(document.getElementById('name').value =="do you like programming"||
-        (document.getElementById('name').value =="Do you like programming")||
-        (document.getElementById('name').value =="Do you like Programming")||
-        (document.getElementById('name').value =="Do You Like Programming"))
-        {
-            document.getElementById('Hello').innerHTML = "yes i love progrmming" 
-        } 
-        else if(document.getElementById('name').value =="How old are you"||
-        (document.getElementById('name').value =="how old are you")||
-        (document.getElementById('name').value =="How Old Are You")||
-        (document.getElementById('name').value =="HOW OLD ARE YOU"))
-        {
-            document.getElementById('Hello').innerHTML = "Im 12 years old " 
-        } 
-        else if(document.getElementById('name').value =="when were you born"||
-        (document.getElementById('name').value =="WHEN WERE YOU BORN")||
-        (document.getElementById('name').value =="When Were You Born")||
-        (document.getElementById('name').value =="When were you born"))
-        {
-            document.getElementById('Hello').innerHTML = " i was born in 2010" 
-        } 
-        else if(document.getElementById('name').value =="when is your birthday"||
-        (document.getElementById('name').value =="When Is Your Birthday")||
-        (document.getElementById('name').value =="When is your Birthday")||
-        (document.getElementById('name').value =="when is your Birthday"))
-        {
-            document.getElementById('Hello').innerHTML = " 15th of may 2010" 
-        } 
-        else if(document.getElementById('name').value =="what color are your eyes"||
-        (document.getElementById('name').value =="waht eye color do you have")||
-        (document.getElementById('name').value =="Waht eye color do you have")||
-        (document.getElementById('name').value =="What color are your eyes"))
-        {
-            document.getElementById('Hello').innerHTML = " my eyes color is brown" 
-        } 
-        else if(document.getElementById('name').value =="which haircolor do you have"||
-        (document.getElementById('name').value =="Which Haircolor Do You Have")||
-        (document.getElementById('name').value =="Which Haircolor Do You Have")||
-        (document.getElementById('name').value =="WHICH HAIRCOLOR DO YOU HAVE"))
-        {
-            document.getElementById('Hello').innerHTML = "my hair color is black" 
-        } 
-        else if(document.getElementById('name').value =="what job do you want to be"||
-        (document.getElementById('name').value =="What Job Do You Want To Be")||
-        (document.getElementById('name').value =="WHAT JOB DO YOU WANT TO BE")||
-        (document.getElementById('name').value =="What job do you want to be"))
-        {
-            document.getElementById('Hello').innerHTML = "Informatiker" 
-        } 
-        else if(document.getElementById('name').value =="how long are you"||
-        (document.getElementById('name').value =="How long are you")||
-        (document.getElementById('name').value =="How Long Are You")||
-        (document.getElementById('name').value =="How Long are you"))
-        {
-            document.getElementById('Hello').innerHTML = "im 164cm long" 
-        } 
-        else if(document.getElementById('name').value =="wahts your favorite car"||
-        (document.getElementById('name').value =="Wahts your favorite care")||
-        (document.getElementById('name').value =="Wahts Your Favorite Car")||
-        (document.getElementById('name').value =="wahts your favorite car?"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite car is a Lamborghini" 
-        } 
-        else if(document.getElementById('name').value =="wahts your favorite color"||
-        (document.getElementById('name').value =="Wahts Your Favorite Color")||
-        (document.getElementById('name').value =="Wahts your favorite color")||
-        (document.getElementById('name').value =="wahts your favorite color?"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite color is red" 
-        } 
-        else if(document.getElementById('name').value =="wahts your favorite meal"||
-        (document.getElementById('name').value =="Wahts your favorite meal")||
-        (document.getElementById('name').value =="Wahts Your Favorite Meal")||
-        (document.getElementById('name').value =="wahts your favorite meal?"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite meal is Pizza" 
-        } 
-        else if(document.getElementById('name').value =="waht your favorite drink"||
-        (document.getElementById('name').value =="Waht your favorite drink")||
-        (document.getElementById('name').value =="Waht Your Favorite Drink")||
-        (document.getElementById('name').value =="Waht your favorite drink?"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite drink is watter" 
-        } 
-        else if(document.getElementById('name').value =="What is your religion"||
-        (document.getElementById('name').value =="What Is Your Religion")||
-        (document.getElementById('name').value =="What is your religion?")||
-        (document.getElementById('name').value =="what is your religion"))
-        {
-            document.getElementById('Hello').innerHTML = "my religion is Islam" 
-        } 
-        else if(document.getElementById('name').value =="where do you come from"||
-        (document.getElementById('name').value =="Where Do You Come Ffrom")||
-        (document.getElementById('name').value =="Where do you come from")||
-        (document.getElementById('name').value =="where do you come from?"))
-        {
-            document.getElementById('Hello').innerHTML = "I come from Syria" 
-        } 
-        else if(document.getElementById('name').value =="what language do you speak"||
-        (document.getElementById('name').value =="What language do you speak")||
-        (document.getElementById('name').value =="what language do you speak?")||
-        (document.getElementById('name').value =="What Language Do you Speak"))
-        {
-            document.getElementById('Hello').innerHTML = "I speak arbabisch,english,german" 
-        } 
-        else if(document.getElementById('name').value =="waht animal do you like the most"||
-        (document.getElementById('name').value =="Waht animal do you like the most")||
-        (document.getElementById('name').value =="Waht Animal Do You Like The Most")||
-        (document.getElementById('name').value =="waht animal do you like the most?"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite animals are bunnys/cats" 
-        } 
-        else if(document.getElementById('name').value =="which subject do you like the most"||
-        (document.getElementById('name').value =="Which subject do you like the most")||
-        (document.getElementById('name').value =="Which Subject Do You Like The Most")||
-        (document.getElementById('name').value =="which subject do you like the most?"))
-        {
-            document.getElementById('Hello').innerHTML = "i like do informatik do mahts" 
-        } 
-        else if(document.getElementById('name').value =="witch contry do you like the most"||
-        (document.getElementById('name').value =="witch contry do you like the most?")||
-        (document.getElementById('name').value =="Witch contry do you like the most?")||
-        (document.getElementById('name').value =="Witch Contry Do You Like The Most"))
-        {
-            document.getElementById('Hello').innerHTML = "i like syria and germany" 
-        } 
-        else if(document.getElementById('name').value =="witch contry do you like to travel to visit"||
-        (document.getElementById('name').value =="Witch contry do you like to travel to visit")||
-        (document.getElementById('name').value =="Witch Contry Do You Like To travel To Visit")||
-        (document.getElementById('name').value =="witch contry do you like to travel to visit?"))
-        {
-            document.getElementById('Hello').innerHTML = "i like to travel to Norway" 
-        } 
-        else if(document.getElementById('name').value =="do you like to cooking"||
-        (document.getElementById('name').value =="Do You Like To Cooking")||
-        (document.getElementById('name').value =="Do you like to cooking")||
-        (document.getElementById('name').value =="do you like to cooking?"))
-        {
-            document.getElementById('Hello').innerHTML = "yes i love to cook my meals" 
-        } 
-        else if(document.getElementById('name').value =="do you like reading"||
-        (document.getElementById('name').value =="Do you like Reading")||
-        (document.getElementById('name').value =="Do you like reading")||
-        (document.getElementById('name').value =="do you like reading?"))
-        {
-            document.getElementById('Hello').innerHTML = "yes i like reading" 
-        } 
-        else if(document.getElementById('name').value =="waht is your favorite book"||
-        (document.getElementById('name').value =="Waht Is Your Favorite Book")||
-        (document.getElementById('name').value =="waht is your favorite book?")||
-        (document.getElementById('name').value =="Waht is your favorite book"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite book is fairytail" 
-        } 
-        else if(document.getElementById('name').value =="Who is your favorite person"||
-        (document.getElementById('name').value =="Who is your favorite person?")||
-        (document.getElementById('name').value =="Who is your favorite person")||
-        (document.getElementById('name').value =="Who is your Favorite person"))
-        {
-            document.getElementById('Hello').innerHTML = "my favorite person is my mom" 
-        } 
-        
-        else
-        {
-            document.getElementById('Hello').innerHTML = " >>> Unfortunately, your question was not understood <<< "
-        }
-     }
-     else if(document.getElementById('select').value =="germany"){
+      let number = Math.floor(Math.random() * 10);
+      numbers.push(number);
+      document.getElementById("number-display").innerText = number; 
+      currentNumberIndex++;
+      setTimeout(showNextNumber, 1000);
+      if(document.getElementById("number-desplay") === 0){
+        play(audio0)
+      }
+      if(document.getElementById("number-desplay") === 1){
+        play(audio1)
+      }
+      if(document.getElementById("number-desplay") === 2){
+        play(audio2)
+      }
+      if(document.getElementById("number-desplay") === 3){
+        play(audio3)
+      }
+      if(document.getElementById("number-desplay") === 4){
+        play(audio4)
+      }
+      if(document.getElementById("number-desplay") === 5){
+        play(audio5)
+      }
+      if(document.getElementById("number-desplay") === 6){
+        play(audio6)
+      }
+      if(document.getElementById("number-desplay") === 7){
+        play(audio7)
+      }
+      if(document.getElementById("number-desplay") === 8){
+        play(audio8)
+      }
+      if(document.getElementById("number-desplay") === 9){
+        play(audio9)
+      }
+      if(document.getElementById("number-desplay") === 10){
+        play(audio10)
+      }
 
-        if(document.getElementById('name').value =="Wie geht es dir"||
-        (document.getElementById('name').value =="Wie geht es dir?")||
-        (document.getElementById('name').value =="wie geht es dir?")||
-        (document.getElementById('name').value =="wie geht es dir"))
-        {
-            document.getElementById('Hello').innerHTML = "Gut, danke"
-        }
-        else if(document.getElementById('name').value =="wie heißt du"||
-        (document.getElementById('name').value =="Wie heißt du")||
-        (document.getElementById('name').value =="Wie heißt du?")||
-        (document.getElementById('name').value =="wie heißt du?"))
-        {
-            document.getElementById('Hello').innerHTML = "mein Name ist wasel"
-        }
-        else if(document.getElementById('name').value =="Wahs your Hobby"||
-        (document.getElementById('name').value =="Wahs your Hobby?")||
-        (document.getElementById('name').value =="wahs your Hobby")||
-        (document.getElementById('name').value =="wahs your Hobby?"))
-        {
-            document.getElementById('Hello').innerHTML = "mein Hobby ist Schwimmen"
-        }
-        else if(document.getElementById('name').value =="hast du Geschwister"||
-        (document.getElementById('name').value =="hast du Geschwister?")||
-        (document.getElementById('name').value =="Hast du Geschwister")||
-        (document.getElementById('name').value =="Hast du Geschwister?"))
-        {
-            document.getElementById('Hello').innerHTML = "Ja, ich habe zwei Geschwister"
-        }
-        else if(document.getElementById('name').value =="Programmierst du gerne"||
-        (document.getElementById('name').value =="programmierst du gerne")||
-        (document.getElementById('name').value =="programmierst du gerne?")||
-        (document.getElementById('name').value =="Programmierst du gerne?"))
-        {
-            document.getElementById('Hello').innerHTML = "Ja, ich liebe Programmieren"
-        }
-        else if(document.getElementById('name').value =="Wie alt bist du"||
-        (document.getElementById('name').value =="wie alt bist du")||
-        (document.getElementById('name').value =="wie alt bist du?")||
-        (document.getElementById('name').value =="Wie alt bist du?"))
-        {
-            document.getElementById('Hello').innerHTML = "Ich bin 11 Jahre alt "
-        }
-        else if(document.getElementById('name').value =="wann wurdest du geboren"||
-        (document.getElementById('name').value =="Wann wurdest du geboren")||
-        (document.getElementById('name').value =="Wann wurdest du geboren?")||
-        (document.getElementById('name').value =="wann wurdest du geboren?"))
-        {
-            document.getElementById('Hello').innerHTML = "Ich wurde 2010 geboren"
-        }
-        else if(document.getElementById('name').value =="wann hast du Geburtstag"||
-        (document.getElementById('name').value =="Wann hast du Geburtstag")||
-        (document.getElementById('name').value =="Wann hast du Geburtstag?")||
-        (document.getElementById('name').value =="wann hast du Geburtstag?"))
-        {
-            document.getElementById('Hello').innerHTML = "am 15. Mai 2010"
-        }
-        else if(document.getElementById('name').value =="welche Farbe haben deine Augen"||
-        (document.getElementById('name').value =="Welche Farbe haben deine Augen")||
-        (document.getElementById('name').value =="Welche Farbe haben deine Augen?")||
-        (document.getElementById('name').value =="welche Farbe haben deine Augen?"))
-        {
-            document.getElementById('Hello').innerHTML = "Meine Augenfarbe ist braun"
-        }
-        else if(document.getElementById('name').value =="welche Haarfarbe hast du"||
-        (document.getElementById('name').value =="Welche Haarfarbe hast du")||
-        (document.getElementById('name').value =="Welche Haarfarbe hast du?")||
-        (document.getElementById('name').value =="welche Haarfarbe hast du?"))
-        {
-            document.getElementById('Hello').innerHTML = "meine Haarfarbe ist schwarz"
-        }
-        else if(document.getElementById('name').value =="welchen Job möchtest du werden"||
-        (document.getElementById('name').value =="Welchen Job möchtest du werden")||
-        (document.getElementById('name').value =="Welchen Job möchtest du werden?")||
-        (document.getElementById('name').value =="welchen Job möchtest du werden?"))
-        {
-            document.getElementById('Hello').innerHTML = "Informatiker"
-        }
-        else if(document.getElementById('name').value =="wie groß bist du"||
-        (document.getElementById('name').value =="Wie groß bist du")||
-        (document.getElementById('name').value =="Wie groß bist du?")||
-        (document.getElementById('name').value =="wie groß bist du?"))
-        {
-            document.getElementById('Hello').innerHTML = "bin 164 cm lang"
-        }
-        else if(document.getElementById('name').value =="was dein Lieblings auto"||
-        (document.getElementById('name').value =="Was dein Lieblings auto")||
-        (document.getElementById('name').value =="Was dein Lieblings auto?")||
-        (document.getElementById('name').value =="was dein Lieblings auto?"))
-        {
-            document.getElementById('Hello').innerHTML = "Mein Lieblingsauto ist ein Lamborghini"
-        }
-        else if(document.getElementById('name').value =="wahts your favorite color"||
-        (document.getElementById('name').value =="Wahts your favorite color")||
-        (document.getElementById('name').value =="Wahts your favorite color?")||
-        (document.getElementById('name').value =="wahts your favorite color?"))
-        {
-            document.getElementById('Hello').innerHTML = "meine Lieblingsfarbe ist rot"
-        }
-        else if(document.getElementById('name').value =="was dein Lieblingsessen ist"||
-        (document.getElementById('name').value =="Was dein Lieblingsessen ist")||
-        (document.getElementById('name').value =="Was dein Lieblingsessen ist?")||
-        (document.getElementById('name').value =="was dein Lieblingsessen ist?"))
-        {
-            document.getElementById('Hello').innerHTML = "Mein Lieblingsessen ist Pizza"
-        }
-        else if(document.getElementById('name').value =="was dein Lieblingsgetränk ist"||
-        (document.getElementById('name').value =="Was dein Lieblingsgetränk ist?")||
-        (document.getElementById('name').value =="Was dein Lieblingsgetränk ist")||
-        (document.getElementById('name').value =="was dein Lieblingsgetränk ist?"))
-        {
-            document.getElementById('Hello').innerHTML = "Mein Lieblingsgetränk ist Wasser"
-        }
-        else if(document.getElementById('name').value =="Was ist deine Religion"||
-        (document.getElementById('name').value =="Was Ist Deine Religion")||
-        (document.getElementById('name').value =="was ist deine religion")||
-        (document.getElementById('name').value =="Was ist deine Religion?"))
-        {
-            document.getElementById('Hello').innerHTML = "meine Religion ist der Islam"
-        }
-        else if(document.getElementById('name').value =="wo kommst du her"||
-        (document.getElementById('name').value =="Wo kommst du her")||
-        (document.getElementById('name').value =="Wo kommst du her?")||
-        (document.getElementById('name').value =="wo kommst du her?"))
-        {
-            document.getElementById('Hallo').innerHTML = "Ich komme aus Syrien"
-        }
-        else if(document.getElementById('name').value =="welche Sprache sprechen du"||
-        (document.getElementById('name').value =="Welche Sprache sprechen du")||
-        (document.getElementById('name').value =="Welche Sprache sprechen du?")||
-        (document.getElementById('name').value =="welche Sprache sprechen du??"))
-        {
-            document.getElementById('Hello').innerHTML = "Ich spreche Arabisch, Englisch, Deutsch"
-        }
-        else if(document.getElementById('name').value =="welches tier magst du am meisten"||
-        (document.getElementById('name').value =="welches tier magst du am meisten?")||
-        (document.getElementById('name').value =="Welches tier magst du am meisten")||
-        (document.getElementById('name').value =="welches Tier magst du am meisten?"))
-        {
-            document.getElementById('Hello').innerHTML = "Meine Lieblingstiere sind Hasen/Katzen"
-        }
-        else if(document.getElementById('name').value =="welches land gefällt dir am besten"||
-        (document.getElementById('name').value =="Welches land gefällt dir am besten")||
-        (document.getElementById('name').value =="Welches land Gefällt dir am besten")||
-        (document.getElementById('name').value =="welches land gefällt dir am besten?"))
-        {
-            document.getElementById('Hello').innerHTML = "ich mag Syrien und Deutschland"
-        }
-        else if(document.getElementById('name').value =="welches land möchtest du gerne besuchen"||
-        (document.getElementById('name').value =="Welches land möchtest du gerne besuchen")||
-        (document.getElementById('name').value =="welches land möchtest du gerne besuchen?")||
-        (document.getElementById('name').value =="welches land möchtest du gerne besuchen"))
-        {
-            document.getElementById('Hello').innerHTML = "ich möchte gerne nach Norwegen"
-        }
-        else if(document.getElementById('name').value =="kochst du gerne"||
-        (document.getElementById('name').value =="Kochst du gerne")||
-        (document.getElementById('name').value =="Kochst Du Gerne")||
-        (document.getElementById('name').value =="kochst du gerne?"))
-        {
-            document.getElementById('Hello').innerHTML = "Ja, ich liebe es, meine Mahlzeiten zu kochen"
-        }
-        else if(document.getElementById('name').value =="was ist dein Lieblingsbuch"||
-        (document.getElementById('name').value =="Was ist dein Lieblingsbuch")||
-        (document.getElementById('name').value =="was ist dein lieblingsbuch")||
-        (document.getElementById('name').value =="Was ist dein Lieblingsbuch?"))
-        {
-            document.getElementById('Hello').innerHTML = "Mein Lieblingsbuch ist Fairy tail"
-        }
-         else if(document.getElementById('name').value =="Wer ist deine Lieblingsperson"||
-        (document.getElementById('name').value =="Wer Ist Deine Lieblingsperson")||
-        (document.getElementById('name').value =="wer ist deine lieblingsperson")||
-        (document.getElementById('name').value =="Wer ist deine Lieblingsperson?"))
-         {
-             document.getElementById('Hello').innerHTML = "Meine Lieblingsperson ist meine Mutter"
-         }
-         
-         }
-         else
-         {
-             document.getElementById('Hello').innerHTML = " >>> Ihre Antwort wurde leider nicht erkannt <<< "
-         }
-        
-     }
-    
-    
+    }
+    function checkSum() {
+  let expectedSum = numbers.reduce((a, b) => a + b, 0);
+  let actualSum = parseInt(document.getElementById("number-input").value);
+  
+  if (expectedSum === actualSum) {
+  alert("Correct! The correct sum was: " + expectedSum);
+  document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) + 1;
+  setTimeout(function() {
+  currentNumberIndex = 0;
+  numbers = [];
+  showNextNumber();
+  }, 5000);
+} 
+else {
+  alert("Incorrect. The correct sum was: " + expectedSum);
+  if(document.getElementById("score").value < 0){
+  document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) - 1;
+  }
+  setTimeout(function() {
+currentNumberIndex = 0;
+numbers = [];
+showNextNumber();
+}, 5000);
+}
+}
 
+  showNextNumber();
 </script>
+</body>
 </html>
